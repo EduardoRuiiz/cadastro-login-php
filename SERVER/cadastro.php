@@ -1,9 +1,5 @@
 <?php
 require_once 'db_connect.php';
-require_once '../CLIENT/cadastrado.html';
-
-$arquivo = '../CLIENT/cadastrado.html';
-$html = file_get_contents($arquivo);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login = $_POST['login'];
@@ -14,7 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ss", $login, $senha);
 
     if ($stmt->execute()) {
-        return $html;
+        // Redirecionar para a página cadastrado.html
+        header("Location: ../CLIENT/cadastrado.html");
+        exit(); // Garante que o script pare aqui
     } else {
         echo "Erro ao cadastrar usuário: " . $stmt->error;
     }

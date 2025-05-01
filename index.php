@@ -31,10 +31,10 @@ $login_cookie = $_COOKIE["login"] ?? null;
                             <p class="text-success">Essas informações <strong>PODEM</strong> ser acessadas por você.</p>
                         <?php else: ?>
                             <p class="text-danger">Essas informações <strong>NÃO PODEM</strong> ser acessadas por você.</p>
-                            <a href="CLIENT/login.html" class="btn btn-primary mt-3">Faça Login</a>
+                            <a href="/cadastro-login-php-main/CLIENT/login.html" class="btn btn-primary mt-3">Fazer Login</a>
                             <p></p>
                             <h2>Nao possui uma conta?</h2>
-                            <a href="CLIENT/cadastro.html" class="btn btn-primary mt-3">Cadastrar-se</a>
+                            <a href="/cadastro-login-php-main/CLIENT/cadastro.html" class="btn btn-primary mt-3">Cadastrar-se</a>
                         <?php endif; ?>
                     </div>
 

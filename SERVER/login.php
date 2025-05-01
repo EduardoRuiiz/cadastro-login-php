@@ -1,8 +1,6 @@
 <?php
 require_once 'db_connect.php';
 require_once '../index.php';
-$telainicial = '../index.php';
-$html = file_get_contents($telainicial);
 $login = $_POST["login"];
 $entrar = $_POST["entrar"];
 $senha = $_POST["senha"];
@@ -12,9 +10,12 @@ $result = $connect->query($verifica);
 
 if (mysqli_num_rows($result) <= 0) {
     echo ("Usuario não cadastrado.");
-    return $html;
+    header("Location: ../CLIENT/login.html");
+    exit();
 } else {
-    return $html;
+   header("Location: ../index.php");
+   echo ("Usuario cadastrado com sucesso.");
+   exit();
 }
 
 ?>
