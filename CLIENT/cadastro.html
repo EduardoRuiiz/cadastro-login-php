@@ -2,38 +2,45 @@
 
 <head>
     <title> Cadastro </title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../STYLE/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@500&family=Anton&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../STYLE/style.css">
 </head>
 
-<body class="bg-secondary">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="../index.php">Tela inicial</a>
-        </div>
+<body class="signup-bg">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark title-signup">
+        <a href="../index.php" class="w-100 text-decoration-none">
+            <div class="container text-center">
+                <span class="navbar-brand mb-0 h1 text-white">Tela inicial</span>
+            </div>
+        </a>
     </nav>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
 
-                <div class="card shadow p-4">
-                    <h2 style="color: blue;" class="text-center mb-4">Tela de Cadastro</h2>
+                <div class="card shadow p-4 h2-login">
+                    <h2 class="text-center mb-4 h2-login">Tela de Cadastro</h2>
                     <form method="POST" action="..\SERVER\cadastro.php">
                         <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
+                            <label for="username" class="form-label signup-label">Username</label>
                             <input type="text" class="form-control" name="login" id="username"
                                 placeholder="Digite seu username">
                         </div>
                         <div class="mb-3">
-                            <label for="senha" class="form-label">Password</label>
+                            <label for="senha" class="form-label signup-label">Password</label>
                             <input type="password" class="form-control" name="senha" id="senha"
                                 placeholder="Digite sua senha">
                         </div>
                         <div class="d-grid">
                             <button type="submit" value="Cadastrar" id="cadastrar" name="cadastrar"
-                                class="btn btn-primary">Cadastrar</button>
+                                class="signup-button">Cadastrar</button>
                         </div>
-                        <a href="login.html">Ja possui conta? Clique para fazer login</a>
+                        <p>Ja possui conta?</p>
+                        <button href="login.html" class="signup-button">Clique para fazer login</button>
                     </form>
 </body>
 

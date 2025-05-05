@@ -9,13 +9,11 @@ $db = mysqli_query($connect, $verifica);
 $result = $connect->query($verifica);
 
 if (mysqli_num_rows($result) <= 0) {
-    echo ("Usuario não cadastrado.");
-    header("Location: ../CLIENT/login.html");
+    header("Location: errologin.php");
     exit();
 } else {
-   header("Location: ../index.php");
-   echo ("Usuario cadastrado com sucesso.");
-   exit();
+    header("Location: logado.php");
+    exit();
 }
 
 ?>
