@@ -1,0 +1,75 @@
+<?php
+
+require_once '../SERVER/db_connect.php';
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $login = mysqli_real_escape_string($connect, $_POST["login"]);
+    $senha = mysqli_real_escape_string($connect, $_POST["senha"]);
+
+    $stmt = $connect->prepare("SELECT * FROM admins WHERE usuario = ? AND senha = ?");
+    $stmt->bind_param("ss", $login, $senha);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows <= 0) {
+        header("Location: errolog_adm.php");
+        exit();
+    } else {
+        header("Location: dashboard.php");
+        exit();
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login de Usuario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@500&family=Anton&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../STYLE/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a href="index.php" class="w-100 text-decoration-none">
+            <div class="container text-center">
+                <span class="navbar-brand mb-0 h1 text-white">Tela inicial</span>
+            </div>
+        </a>
+    </nav>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow p-4">
+                    <h2 class="text-center mb-4 h2-login">Login</h2>
+                    <form method="POST" action="">
+                        <div class="mb-3">
+                            <label for="username" class="form-label login-label">Username</label>
+                            <input type="text" class="form-control" name="login" id="username"
+                                placeholder="Digite seu username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha" class="form-label login-label">Password</label>
+                            <input type="password" class="form-control" name="senha" id="senha"
+                                placeholder="Digite sua senha" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="signup-button">Entrar</button>
+                        </div>
+                    </form>
+                    <div class="mb-3">
+                        <label for="username" class="form-label login-label">Não possui uma conta?</label>
+                    </div>
+                    <div id="botaosemlinha">
+                        <a href="signup_adm.php" class="signup-button">Cadastre-se</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
