@@ -11,22 +11,20 @@ $login_cookie = $_COOKIE["login"] ?? null;
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Riders' Club</title>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <link rel="icon" sizes="192x192" href="/IMG/1.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link rel="icon" sizes="192x192" href="/IMG/1.png" type="image/x-icon">
     <link rel="shortcut icon" href="/IMG/1.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="/IMG/1.png" type="image/x-icon">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/STYLE/style.css">
 
     <meta name="description" content="O melhor lugar para você adquirir, customizar e aprimorar sua moto.">
     <meta name="author" content="Riders' Club">
+    <title>Riders' Club</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    
 </head>
 
 <body class="bg-light text-dark">
@@ -49,8 +47,8 @@ $login_cookie = $_COOKIE["login"] ?? null;
       <ul class="navbar-nav mb-2 mb-lg-0"  style="gap:25px; font-family: 'Audiowide', sans-serif;">
         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Conheça nossa oficina</a></li>
-        <li class="nav-item"><a class="nav-link" href="MotosDisponíveis.html">Motos disponíveis</a></li>
-        <li class="nav-item"><a class="nav-link" href="Produto.html">Produtos</a></li>
+        <li class="nav-item"><a class="nav-link" href="../CLIENT/MotosDisponíveis.html">Motos disponíveis</a></li>
+        <li class="nav-item"><a class="nav-link" href="../CLIENT/Produto.html">Produtos</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Serviços de manutenção</a></li>
 
         <!-- Dropdown de opções -->
@@ -118,11 +116,8 @@ $login_cookie = $_COOKIE["login"] ?? null;
                     +</button><br>
                 <button class="btn btn-outline-dark w-100 py-3 shadow-sm services-banner2 grid-item">Pintura +</button>
             </div>
-
     </section>
 
-    <div>
-    </div>
     <div class="services-banner2">
         Clientes
     </div>
