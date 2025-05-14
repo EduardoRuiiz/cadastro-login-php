@@ -1,0 +1,416 @@
+body,
+html {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* Garantir que o corpo ocupe pelo menos a altura total da tela */
+    display: flex;
+    flex-direction: column;
+}
+
+
+h1 {
+    color: black;
+}
+
+.h2-login {
+    font-family: 'Orbitron', sans-serif;
+    color: rgb(0, 0, 0);
+    text-shadow: #18fa3e;
+    font-size: 30px;
+}
+
+footer {
+    background-color: black;
+    /* Fundo preto */
+    color: white;
+    /* Cor do texto branca */
+    text-align: center;
+    /* Centralizar o texto */
+    padding: 10px 0;
+    /* Espaçamento interno */
+    margin-top: auto;
+    /* Faz o rodapé ir para o final da página */
+}
+
+footer p {
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 3 colunas de tamanho igual */
+    grid-template-rows: repeat(7, 1fr);
+    /* 3 linhas de tamanho igual */
+    gap: 20px;
+    /* Espaçamento entre os itens */
+    justify-items: center;
+    /* Centraliza itens nas colunas */
+    align-items: center;
+    /* Centraliza itens nas linhas */
+}
+
+/* Estilo para os itens do grid (cards) */
+.grid-item {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.left-item1 {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.left-item2 {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.left-item3 {
+    grid-row: 4;
+    grid-column: 3;
+}
+
+.right-item1 {
+    grid-row: 2;
+    grid-column: 4;
+}
+
+.right-item2 {
+    grid-row: 3;
+    grid-column: 4;
+}
+
+.right-item3 {
+    grid-row: 4;
+    grid-column: 4;
+}
+
+.image-item {
+    grid-row: 3;
+    grid-column: 3;
+}
+
+.image-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5%;
+    height: 80vh;
+    background-image: url('../IMG/bg2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.title {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 1, 2rem;
+    color: rgb(163, 163, 163);
+    padding: 10px 20px;
+
+}
+
+.title-login {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgb(0, 255, 42);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #fa1818;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: rgba(51, 50, 50, 0.7);
+    border: 2px solid rgb(43, 255, 0);
+}
+
+.title-login:hover {
+    transform: scale(1.0);
+    box-shadow: 0 4px 8px #09ff01;
+}
+
+.title-signup {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #fa1818;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #fa1818;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: rgba(51, 50, 50, 0.7);
+    border: 2px solid #fa1818;
+}
+
+
+
+
+.title-signup:hover {
+    transform: scale(1.0);
+    box-shadow: 0 4px 8px #fa1818;
+}
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: rgb(163, 163, 163);
+    text-shadow: 2px 2px 4px #fa1818;
+    padding: 10px 20px;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* fundo mais escuro */
+    border-radius: 6px;
+}
+
+.hero-subtitle {
+    font-family: 'Orbitron', sans-serif;
+    color: #a5a4a4;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgb(255, 0, 0);
+    padding: 10px 20px;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* fundo mais escuro */
+    border-radius: 6px;
+}
+
+.button-services {
+    font-family: 'Audiowide', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    padding: 5px 10px;
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 6px;
+}
+
+.hero-bg {
+    background-image: url('../IMG/bg1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5%;
+}
+
+.login-bg {
+    background-image: url('../IMG/bglogin.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.signup-bg {
+    background-image: url('../IMG/bgsignup.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.hero-bg2 {
+    background-image: url('../IMG/bg2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* <-- isso centraliza horizontalmente */
+    padding: 0 5%;
+}
+
+.services-banner1 {
+    font-family: 'Audiowide', sans-serif;
+    background: linear-gradient(to right, #000 0%, #111 100%);
+    /* leve gradiente */
+    color: #ff0000;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: normal;
+    width: 100%;
+    border-top: 1px solid #fd0d0d;
+    border-bottom: 1px solid #fd0d0d;
+}
+
+.nav-banner {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(to right, #000 0%, #111 100%);
+    color: #ff0000;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    border-top: 2px solid #fd0d0d;
+    border-bottom: 2px solid #fd0d0d;
+}
+
+/* Evitar que os botões sejam afetados */
+.nav-banner a,
+.nav-banner button {
+    color: inherit;
+    /* Mantém a cor original */
+    text-shadow: none;
+    /* Remove o text-shadow */
+    font-size: inherit;
+    /* Mantém o tamanho original */
+    font-weight: normal;
+    /* Mantém o peso original */
+    background: none;
+    /* Remove o fundo */
+    border: none;
+    /* Remove bordas */
+}
+
+.services-banner2 {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(to right, #000 0%, #111 100%);
+    /* leve gradiente */
+    color: #ff0000;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    border-top: 2px solid #fd0d0d;
+    border-bottom: 2px solid #fd0d0d;
+}
+
+.login-button {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: black;
+    color: #18fa3e;
+    text-shadow: 1px 1px 2px rgb(75, 74, 74);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #18fa3e;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(24, 250, 62, 0.5);
+}
+
+.signup-button {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: rgb(255, 0, 0);
+    color: #fcfcfc;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: normal;
+    border: 2px solid #fa1818;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.signup-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px #fa1818;
+}
+
+.button-signup {
+    font-family: 'Audiowide', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    /* Branco no text-shadow */
+    padding: 5px 10px;
+    color: white;
+    /* Cor branca */
+    cursor: pointer;
+    background-color: rgba(51, 50, 50, 0.7);
+    border: 2px solid rgb(255, 0, 0);
+    /* Borda vermelha */
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-signup:hover {
+    transform: scale(1.0);
+    box-shadow: 0 4px 8px rgb(250, 24, 24);
+    /* Sombra vermelha ao passar o mouse */
+}
+
+
+.login-label {
+    font-family: 'Rajdhani', sans-serif;
+    color: black;
+    text-shadow: 1px 1px 2px #18fa3e;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.signup-label {
+    font-family: 'Audiowire', sans-serif;
+    color: black;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.navbar a {
+    display: block;
+    /* Faz o link ocupar toda a área */
+    text-decoration: none;
+    /* Remove o sublinhado */
+    color: inherit;
+    /* Mantém a cor do texto */
+}
+
+.main-navbar {
+    background-color: #000000;
+    /* Cor preta */
+    border-bottom: 2px solid #444;
+    /* Opcional: borda para destaque */
+}
+
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+}
+
+main {
+    margin-left: 220px;
+    /* Espaço da sidebar */
+}
