@@ -1,36 +1,4 @@
-<?php
-?>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar e Botões</title>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .b-example-divider {
-            width: 100%;
-            height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <div class="navbar navbar-dark bg-dark shadow-sm">
-            <div class="container d-flex justify-content-start align-items-start">
-                <span class="text-white">Bem-vindo ao Rider's Club</span>
-            </div>
-        </div>
-    </header>
+<?php include_once "../templates/reader.php" ?>
 
     <div class="container-fluid content d-flex justify-content-center align-items-center min-vh-100">
         <div class="row w-100">
@@ -81,9 +49,4 @@
         </div>
     </div>
 
-    <footer class="footer bg-dark text-white text-center py-3">
-        <p class="mb-0">2025 Riders'Club - Todos os direitos reservados</p>
-    </footer>
-</body>
-
-</html>
+    <?php include_once"templates/footer.php"?>
