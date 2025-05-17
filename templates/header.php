@@ -40,7 +40,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0"
             style="gap:15px; font-family: 'Audiowide', sans-serif; font-size: 14px;">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/index.php">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Conheça nossa oficina</a></li>
             <li class="nav-item"><a class="nav-link" href="/server/motosDisponiveis.php">Motos disponíveis</a></li>
             <li class="nav-item"><a class="nav-link" href="/server/produto.php">Produtos</a></li>
@@ -63,7 +63,7 @@
           <div class="d-flex" style="gap:8px; font-family: 'Audiowide', sans-serif; font-size: 13px;">
             <button class="btn btn-outline-light btn-sm me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Log
               in</button>
-            <a class="button-signup btn btn-sm" href="CLIENT/cadastro.html">Sign Up</a>
+            <a class="button-signup btn btn-sm" href="/server/cadastro.php">Sign Up</a>
           </div>
         </div>
       </div>

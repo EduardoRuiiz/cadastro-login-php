@@ -1,5 +1,5 @@
 
-<?php include_once "templates/reader.php" ?>
+<?php include_once "templates/header.php" ?>
 
   <section class="hero-bg">
 
@@ -11,7 +11,7 @@
     </div>
   </section>
 
-  <?php if ($login_cookie): ?>
+  <?php if (isset($login_cookie)): ?>
     <a href="#" class="btn btn-primary btn-lg me-2">Área do Cliente</a>
     <button type="button" class="btn btn-dark button-services">Dark</button>
   <?php else: ?>

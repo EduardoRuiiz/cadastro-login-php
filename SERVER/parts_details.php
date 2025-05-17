@@ -13,7 +13,7 @@ if (isset($_GET['id'])) {
     die("ID da peça não fornecido");
 }
 ?>
-<?php include_once "../templates/reader.php" ?>
+<?php include_once "../templates/header.php" ?>
 
 
     <div class="container py-5">

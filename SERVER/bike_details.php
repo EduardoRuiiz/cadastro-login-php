@@ -15,7 +15,7 @@ if (isset($_GET['id'])) {
 }
 ?>
 
-<?php include_once "../templates/reader.php" ?>
+<?php include_once "../templates/header.php" ?>
 
     <div class="container py-5">
         <?php if ($moto): ?>

@@ -5,7 +5,7 @@ $query = "SELECT * FROM produtos WHERE categoria_id = (SELECT id FROM categorias
 $result = $connect->query($query);
 ?>
 
-<?php include_once "../templates/reader.php" ?>
+<?php include_once __DIR__ . "/../templates/header.php" ?>
 
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
