@@ -346,7 +346,7 @@ footer p {
 
 .signup-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px #fa1818;
+    box-shadow: 0 4px 8px #000000;
 }
 
 .button-signup {
@@ -397,6 +397,16 @@ footer p {
     /* Mantém a cor do texto */
 }
 
+.navbar-brand,
+.navbar-brand span {
+    color: #fff !important;
+}
+
+.navbar-brand:hover,
+.navbar-brand:hover span {
+    color: #fa1818 !important;
+}
+
 .main-navbar {
     background-color: #000000;
     /* Cor preta */
@@ -411,6 +421,6 @@ footer p {
 }
 
 main {
-    margin-left: 220px;
+    /* margin-left: 220px; */
     /* Espaço da sidebar */
 }

@@ -35,3 +35,12 @@ CREATE TABLE produtos (
     PRIMARY KEY (id),
     FOREIGN KEY (categoria_id) REFERENCES categorias(id)
 );
+
+CREATE TABLE clientes (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100)NOT NULL,
+    email VARCHAR(100)NOT NULL,
+    client_username VARCHAR(100)NOT NULL,
+    client_password VARCHAR(100)NOT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
