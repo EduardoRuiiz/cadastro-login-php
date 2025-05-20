@@ -1,4 +1,25 @@
+<?php
+session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $client_username = mysqli_real_escape_string($connect, $_POST["username_client"]);
+  $client_password = mysqli_real_escape_string($connect, $_POST["password_client"]);
 
+  $stmt = $connect->prepare("SELECT * FROM clientes WHERE client_username = ?");
+  $stmt->bind_param("s", $client_username);
+  $stmt->execute();
+  $result = $stmt->get_result();
+
+  if ($cliente = $result->fetch_assoc()) {
+    if (password_verify($client_password, $cliente['client_password'])) {
+      $_SESSION['cliente_id'] = $cliente['id'];
+      header("Location: " . $_SERVER['REQUEST_URI']);
+      exit;
+    } else {
+      $erro = 'Usuário ou senha inválidos.';
+    }
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -55,43 +76,63 @@
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Deslogar</a></li>
+                <li><a class="dropdown-item" href="../SERVER/client_logout.php">Deslogar</a></li>
               </ul>
             </li>
           </ul>
 
-          <div class="d-flex" style="gap:8px; font-family: 'Audiowide', sans-serif; font-size: 13px;">
-            <button class="btn btn-outline-light btn-sm me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Log
-              in</button>
-            <a class="button-signup btn btn-sm" href="/server/cadastro.php">Sign Up</a>
-          </div>
+          <?php if (isset($_SESSION['cliente_id'])): ?>
+            <!-- Usuário logado: mostrar botão do carrinho -->
+            <div class="d-flex" style="gap:8px; font-family: 'Audiowide', sans-serif; font-size: 13px;">
+              <a href="/server/carrinho.php" class="btn btn-outline-light btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .485.379L2.89 5H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 14H4a.5.5 0 0 1-.491-.408L1.01 2H.5a.5.5 0 0 1-.5-.5zm3.14 4l1.25 6.5h7.22l1.25-6.5H3.14zM5.5 16a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm7 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                </svg>
+                Carrinho
+              </a>
+            </div>
+          <?php else: ?>
+            <!-- Usuário não logado: mostrar login e sign up -->
+            <div class="d-flex" style="gap:8px; font-family: 'Audiowide', sans-serif; font-size: 13px;">
+              <button class="btn btn-outline-light btn-sm me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Log
+                in</button>
+              <a class="button-signup btn btn-sm" href="/server/cadastro.php">Sign Up</a>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
     </nav>
   </header>
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Log in</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-content bg-dark text-white border-danger" style="border-width:2px;">
+        <div class="modal-header border-bottom border-danger">
+          <h5 class="modal-title" id="loginModalLabel" style="font-family: 'Audiowide', sans-serif">Log in</h5>
+          <button type=" button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form method = "POST" action "login.php">
+          <form action="" method="post">
             <div class="mb-3">
-              <label for="email" class="form-label">Username</label>
-              <input type="email" class="form-control" name="login" id="email">
+              <label for="username" class="form-label">Username</label>
+              <input type="username" name="username_client" class="form-control bg-dark text-white border-danger"
+                id="client_username" placeholder="example@1123" required>
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" name="senha" id="password">
+              <input type="password" name="password_client" class="form-control bg-dark text-white border-danger"
+                id="password" placeholder="Password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Log in</button>
+            <button type="submit" style="font-family: 'Audiowide', sans-serif" class="signup-button">Entrar</button>
           </form>
         </div>
       </div>
     </div>
   </div>
-  <!-- Adicione os scripts do Bootstrap e Popper.js -->
+
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

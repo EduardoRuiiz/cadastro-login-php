@@ -22,7 +22,7 @@
             <div class="col-md-6">
                 <div class="card shadow p-4">
                     <h2 style="color: rgb(0, 255, 85);" class="text-center mb-4">Usuario cadastrado com sucesso!</h2>
-                    <form action="login_adm.html">
+                    <form action="login_adm.php">
                         <button type="submit" class="btn btn-primary">Fazer login</button>
                     </form>
 </body>

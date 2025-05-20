@@ -1,8 +1,6 @@
 
-<?php 
-include_once "templates/header.php";
-require_once 'server/db_connect.php';
-?>
+<?php include_once "templates/header.php" ?>
+
   <section class="hero-bg">
 
     <div class=" container text-center">

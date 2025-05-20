@@ -5,4 +5,5 @@ if (!isset($_SESSION['admin_id'])) {
     header('Location: login_adm.php');
     exit;
 }
+
 ?>

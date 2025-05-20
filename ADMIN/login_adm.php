@@ -72,8 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <label for="username" class="form-label signup-label">Não possui uma conta?</label>
                     </div>
                     <div>
-                        <a href="../ADMCLIENT/signup_adm.html" class="signup-button"
-                            style="text-decoration: none">Cadastre-se</a>
+                        <a href="signup_adm.php" class="signup-button" style="text-decoration: none">Cadastre-se</a>
                     </div>
                 </div>
             </div>

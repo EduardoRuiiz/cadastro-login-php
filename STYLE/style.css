@@ -420,7 +420,33 @@ footer p {
     position: fixed;
 }
 
-main {
-    /* margin-left: 220px; */
+.sidebar+main {
+    margin-left: 220px;
     /* Espaço da sidebar */
+}
+
+.modal-content {
+    background: #181818 !important;
+    color: #fff;
+    border: 2px solid #ff2222 !important;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: #ff2222 !important;
+}
+
+.form-label {
+    color: #ff2222 !important;
+}
+
+.btn-danger {
+    background: #ff2222 !important;
+    border-color: #ff2222 !important;
+}
+
+.form-control.bg-dark {
+    background: #222 !important;
+    color: #fff !important;
+    border-color: #ff2222 !important;
 }
