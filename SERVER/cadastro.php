@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $client_sobrenome = $_POST['sobrenome_cliente'];
   $client_username = $_POST['client_username'];
   $email = $_POST['cliente_email'];
-  $client_password = $_POST['client_password'];
+  $client_password = password_hash($_POST['client_password'], PASSWORD_DEFAULT) ;
 
   $stmt = $connect->prepare("INSERT INTO clientes (nome, sobrenome, client_username, email, client_password) VALUES (?, ?, ?, ?, ?)");
   $stmt->bind_param("sssss", $client_nome, $client_sobrenome, $client_username, $email, $client_password);
