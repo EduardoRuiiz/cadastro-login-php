@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once $_SERVER['DOCUMENT_ROOT'] . '/SERVER/db_connect.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $client_username = mysqli_real_escape_string($connect, $_POST["username_client"]);
   $client_password = mysqli_real_escape_string($connect, $_POST["password_client"]);

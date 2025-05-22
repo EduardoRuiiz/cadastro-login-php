@@ -49,6 +49,12 @@ if (isset($_GET['id'])) {
                         ?>
                     </ul>
                     <a href="motosDisponiveis.php" class="btn btn-secondary mt-4">Voltar</a>
+                    <form action="adicionar_carrinho.php" method="POST" class="mt-3">
+                        <input type="hidden" name="produto_id" value="<?= $moto['id'] ?>">
+                        <label for="quantidade" class="form-label">Quantidade:</label>
+                        <input type="number" name="quantidade" id="quantidade" value="1" min="1" class="form-control mb-2" style="width:100px;" required>
+                        <button type="submit" class="btn btn-primary">Adicionar ao Carrinho</button>
+                    </form>
                 </div>
             </div>
         <?php else: ?>
