@@ -48,6 +48,7 @@ if (isset($_GET['id'])) {
                         endforeach;
                         ?>
                     </ul>
+                    <?php if(isset($_SESSION['cliente_id'])) : ?>
                     <a href="motosDisponiveis.php" class="btn btn-secondary mt-4">Voltar</a>
                     <form action="adicionar_carrinho.php" method="POST" class="mt-3">
                         <input type="hidden" name="produto_id" value="<?= $moto['id'] ?>">
@@ -55,6 +56,9 @@ if (isset($_GET['id'])) {
                         <input type="number" name="quantidade" id="quantidade" value="1" min="1" class="form-control mb-2" style="width:100px;" required>
                         <button type="submit" class="btn btn-primary">Adicionar ao Carrinho</button>
                     </form>
+                    <?php else : ?>
+                    <a href="motosDisponiveis.php" class="btn btn-secondary mt-4">Voltar</a>
+                    <?php endif ; ?>
                 </div>
             </div>
         <?php else: ?>
