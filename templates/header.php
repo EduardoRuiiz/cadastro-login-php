@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($cliente = $result->fetch_assoc()) {
     if (password_verify($client_password, $cliente['client_password'])) {
       $_SESSION['cliente_id'] = $cliente['id'];
+      $_SESSION['nome'] = $cliente['nome'];
       header("Location: " . $_SERVER['REQUEST_URI']);
       exit;
     } else {
@@ -63,11 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0"
             style="gap:15px; font-family: 'Audiowide', sans-serif; font-size: 14px;">
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="/index.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Conheça nossa oficina</a></li>
             <li class="nav-item"><a class="nav-link" href="/server/motosDisponiveis.php">Motos disponíveis</a></li>
             <li class="nav-item"><a class="nav-link" href="/server/produto.php">Produtos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Serviços de manutenção</a></li>
-
+            <?php if (isset($_SESSION['cliente_id'])): ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                 Opções
@@ -82,7 +81,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </li>
           </ul>
 
-          <?php if (isset($_SESSION['cliente_id'])): ?>
             <!-- Usuário logado: mostrar botão do carrinho -->
             <div class="d-flex" style="gap:8px; font-family: 'Audiowide', sans-serif; font-size: 13px;">
               <a href="/server/carrinho.php" class="btn btn-outline-light btn-sm">

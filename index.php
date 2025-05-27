@@ -43,9 +43,6 @@
       </div>
   </section>
 
-  <div class="services-banner2">
-    Clientes
-  </div>
   
   
 <?php include_once"templates/footer.php"?>
